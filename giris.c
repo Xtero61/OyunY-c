@@ -1,9 +1,10 @@
 #include <raylib.h>
-#include "kutup/ana.h"
+#include "ana.h"
 
 int main()
 {
 	InitWindow(EKRAN_GENISLIGI, EKRAN_YUKSEKLIGI, PENCERE_BASLIK_ISMI);
+	SetTargetFPS(FPS_SINIRI);
 	oyun_yukle();
 	while(!WindowShouldClose())
 	{
@@ -11,6 +12,7 @@ int main()
 		oyun_guncelle(dt);
 
 		BeginDrawing();
+		ClearBackground(FARUKGRISI);
     	oyun_ciz();
     	EndDrawing();
   	}

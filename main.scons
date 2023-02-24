@@ -1,0 +1,13 @@
+program_ismi = '../OyunY'
+c_derleme_bayraklari = '-g'
+kod_dosyalari = [ Glob('kod/*.c'), 'giris.c']
+kutuphaneler = 'raylib'
+kutuplar = 'kutup/'
+
+genel=Environment(CC='gcc', CCFLAGS='-Wall -Wextra')
+
+genel.Program(target = program_ismi,          \
+              source = kod_dosyalari,         \
+              CCFLAGS = c_derleme_bayraklari, \
+              LIBS = kutuphaneler,            \
+              CPPPATH = kutuplar, variant_dir='build')

@@ -1,7 +1,7 @@
 #include <raylib.h>
 #include <stdio.h>
 
-#include "../kutup/ana.h"
+#include "ana.h"
 
 char yazi_kutusu[120] = {0};
 

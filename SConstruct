@@ -1,1 +1,1 @@
-Program('OyunY', ['main.c', 'kod/ana.c'])
+SConscript('main.scons', variant_dir='derlenenler')
