@@ -4,7 +4,12 @@ kod_dosyalari = [ Glob('kod/*.c'), 'giris.c']
 kutuphaneler = 'raylib'
 kutuplar = 'kutup/'
 
-genel=Environment(CC='gcc', CCFLAGS='-Wall -Wextra')
+genel=Environment(CC='gcc', CCFLAGS='-Wall -Wextra',\
+				  COMPILATIONDB_USE_ABSPATH=True)
+
+genel.Tool('compilation_db')
+cdb = genel.CompilationDatabase('../compile_commands.json')
+Alias('cdb', cdb)
 
 genel.Program(target = program_ismi,          \
               source = kod_dosyalari,         \
