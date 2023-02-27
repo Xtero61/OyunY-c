@@ -1,23 +1,24 @@
 #include <raylib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "ana.h"
+#include "oyuncu.h"
 
-char yazi_kutusu[120] = {0};
+OyuncuTip oyuncu = {0};
 
 void oyun_yukle()
 {
-    
+    oyuncu_ayarla(&oyuncu);
 }
 
 void oyun_guncelle(float dt)
 {
     DrawFPS(5,5);
-    sprintf(yazi_kutusu, "Ekran Yuksekligi: %d", EKRAN_YUKSEKLIGI);
+    oyuncu_guncelle(&oyuncu, dt);
 }
 
 void oyun_ciz()
-{ 
-    DrawText("Naber Dayi ben Ayi", 190, 200, 20, WHITE);
-    DrawText(yazi_kutusu, 190, 300, 20, WHITE);
+{
+    oyuncu_ciz(&oyuncu);
 }
