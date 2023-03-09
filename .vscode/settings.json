@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ana.h": "c"
+        "ana.h": "c",
+        "oyuncu.h": "c"
     }
 }
