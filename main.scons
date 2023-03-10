@@ -1,11 +1,19 @@
+import os
+import sys
+
 program_ismi = '../OyunY'
 c_derleme_bayraklari = '-g'
 kod_dosyalari = [ Glob('kod/*.c'), 'giris.c']
-kutuphaneler = 'raylib'
+kutuphaneler = ['raylib']
 kutuplar = 'kutup/'
 
+if sys.platform == 'cygwin' or sys.platform == 'win32':
+    print(sys.platform + " ortamina gore ayarlamalar yapiliyor!")
+    kutuphaneler.append('winmm ole32 oleaut32 imm32 version gdi32'.split()) 
+
 genel=Environment(CC='gcc', CCFLAGS='-Wall -Wextra',\
-				  COMPILATIONDB_USE_ABSPATH=True)
+				  ENV = os.environ,\
+                  COMPILATIONDB_USE_ABSPATH=False)
 
 genel.Tool('compilation_db')
 cdb = genel.CompilationDatabase('../compile_commands.json')
@@ -15,4 +23,4 @@ genel.Program(target = program_ismi,          \
               source = kod_dosyalari,         \
               CCFLAGS = c_derleme_bayraklari, \
               LIBS = kutuphaneler,            \
-              CPPPATH = kutuplar, variant_dir='build')
+              CPPPATH = kutuplar)

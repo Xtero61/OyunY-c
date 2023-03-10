@@ -14,11 +14,11 @@ void oyun_yukle()
 
 void oyun_guncelle(float dt)
 {
-    DrawFPS(5,5);
     oyuncu_guncelle(&oyuncu, dt);
 }
 
 void oyun_ciz()
 {
     oyuncu_ciz(&oyuncu);
+    DrawFPS(5,5);
 }

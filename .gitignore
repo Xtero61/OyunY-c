@@ -2,3 +2,4 @@ derlenenler
 .sconsign.dblite
 OyunY
 .cache/
+compile_commands.json

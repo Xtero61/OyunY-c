@@ -2,6 +2,7 @@
     "recommendations": [
         "ms-vscode.cpptools",
         "techiecouch.git-essentials",
-        "xyc.vscode-mdx-preview"
+        "xyc.vscode-mdx-preview",
+        "ms-vscode.cpptools-extension-pack"
     ]
 }
