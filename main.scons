@@ -5,7 +5,7 @@ program_ismi = '../OyunY'
 c_derleme_bayraklari = '-g'
 kod_dosyalari = [ Glob('kod/*.c'), 'giris.c']
 kutuphaneler = ['raylib']
-kutuplar = 'kutup/'
+kutuplar = ['kutup/', 'lib/include/']
 
 if sys.platform == 'cygwin' or sys.platform == 'win32':
     print(sys.platform + " ortamina gore ayarlamalar yapiliyor!")
@@ -23,4 +23,5 @@ genel.Program(target = program_ismi,          \
               source = kod_dosyalari,         \
               CCFLAGS = c_derleme_bayraklari, \
               LIBS = kutuphaneler,            \
+              LIBPATH = 'lib/source/',        \
               CPPPATH = kutuplar)
