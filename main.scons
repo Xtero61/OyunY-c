@@ -4,12 +4,16 @@ import sys
 program_ismi = '../OyunY'
 c_derleme_bayraklari = '-g'
 kod_dosyalari = [ Glob('kod/*.c'), 'giris.c']
-kutuphaneler = ['raylib']
 kutuplar = ['kutup/', 'lib/include/']
+kutuphaneler = ['raylib', 'm']
+lib_path = ''
 
 if sys.platform == 'cygwin' or sys.platform == 'win32':
     print(sys.platform + " ortamina gore ayarlamalar yapiliyor!")
     kutuphaneler.append('winmm ole32 oleaut32 imm32 version gdi32'.split()) 
+    lib_path = 'lib/source/win/'
+else:
+    lib_path = 'lib/source/linux/'
 
 genel=Environment(CC='gcc', CCFLAGS='-Wall -Wextra',\
 				  ENV = os.environ,\
@@ -23,5 +27,5 @@ genel.Program(target = program_ismi,          \
               source = kod_dosyalari,         \
               CCFLAGS = c_derleme_bayraklari, \
               LIBS = kutuphaneler,            \
-              LIBPATH = 'lib/source/',        \
+              LIBPATH = lib_path,             \
               CPPPATH = kutuplar)

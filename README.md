@@ -1,15 +1,36 @@
 # Talimatlar
 
-Gelistirme ortami icin gerekli paketleri kurmak icin `yukle.sh` scripti calistirilabilir. Bu script vscode editoru de kurar. (Script yalnizca arch tabanli dagitimlarda kullanilabilir.)
+Windows mingw gcc compiler kurulu olmali.
+Linux gcc compiler kurulu olmali.
 
-``` bash
-$ chmod u+x yukle.sh && ./yukle.sh
+Her iki işletim sisteminde de SConstruct build tool kurulu olmalı.
+
+## Windows
+
+Programı derlemek için proje dizinine girip scons'u çalıştırın.
+
+```powershell
+$ cd <proje dizini>\OyunY
+$ scons
 ```
 
-Vscode kullanacak kisiler icin `.vscode` klasorunde onerilen uzantilar eklendi. Workspace onerilen uzantilar kurulabilir.
+Çalıştırmak için proje dizininde `OyunY.exe` çift tıklanabilir veya
 
-Kodu derleyip calistirmak icin asagidaki komutu calistiriniz.
+```powershell
+$ .\OyunY.exe
+```
 
-``` bash
-$ scons && ./OyunY
+## Linux
+
+Proje dizinine girip scons'u çalıştırın.
+
+```bash
+$ cd <proje dizini>/OyunY
+$ scons
+```
+
+Çalıştırmak için;
+
+```bash
+$ ./OyunY
 ```
